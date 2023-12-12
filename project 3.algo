@@ -1,0 +1,19 @@
+palindrome :::
+
+FUNCTION IsPalindrome(str: string): BOOLEAN
+VAR
+    first_char, last_char: CHAR
+    remaining_str: string
+BEGIN
+    IF (str.length <= 1) THEN
+        RETURN TRUE  # Empty word or single character word is a palindrome
+    ELSE
+
+        IF (str[0]= str[LENGTH(str) - 1]) THEN
+
+            RETURN IsPalindrome(substring(str, 1, LENGTH(str) - 2))
+        ELSE
+            RETURN FALSE
+        ENDIF
+    ENDIF
+END
